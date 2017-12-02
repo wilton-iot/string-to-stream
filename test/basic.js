@@ -1,6 +1,7 @@
+define(function(localRequire, exports, module) { var requireOrig = require; require = localRequire;
 var concat = require('concat-stream')
-var str = require('../')
-var test = require('tape')
+var str = require('string-to-stream')
+var test = require('tape-compat')
 
 test('basic tests', function (t) {
   t.plan(2)
@@ -11,3 +12,5 @@ test('basic tests', function (t) {
     t.equal(data.toString(), '')
   }))
 })
+
+require = requireOrig;});
